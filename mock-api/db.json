@@ -1,0 +1,65 @@
+{
+  "categories": [
+    { "id": 1, "name": "صنعت و ساختمان", "icon": "Construction" },
+    { "id": 2, "name": "خدمات کشاورزی", "icon": "Agriculture" },
+    { "id": 3, "name": "بهداشت و ایمنی", "icon": "HealthAndSafety" },
+    { "id": 4, "name": "لوازم خانگی", "icon": "Kitchen" },
+    { "id": 5, "name": "خدمات فنی مهندسی", "icon": "Engineering" },
+    { "id": 6, "name": "لوازم خودرو", "icon": "CarRepair" },
+    { "id": 7, "name": "مواد شیمیایی", "icon": "Science" },
+    { "id": 8, "name": "پوشاک و نساجی", "icon": "Checkroom" }
+  ],
+  "subcategories": [
+    { "id": 101, "parentId": 1, "name": "ابزار یراق", "icon": "Build" },
+    { "id": 102, "parentId": 1, "name": "وسایل ساختمانی", "icon": "Foundation" },
+    { "id": 103, "parentId": 1, "name": "ابزار برقی", "icon": "ElectricalServices" },
+
+    { "id": 201, "parentId": 2, "name": "ماشین‌آلات کشاورزی", "icon": "Tractor" },
+    { "id": 202, "parentId": 2, "name": "کود و سموم", "icon": "Eco" },
+
+    { "id": 301, "parentId": 3, "name": "تجهیزات ایمنی", "icon": "Security" },
+    { "id": 302, "parentId": 3, "name": "ماسک و بهداشت فردی", "icon": "Masks" },
+
+    { "id": 401, "parentId": 4, "name": "لوازم آشپزخانه", "icon": "SoupKitchen" },
+    { "id": 402, "parentId": 4, "name": "سیستم تهویه", "icon": "AcUnit" },
+
+    { "id": 501, "parentId": 5, "name": "نقشه‌برداری", "icon": "Map" },
+    { "id": 502, "parentId": 5, "name": "طراحی صنعتی", "icon": "DesignServices" },
+
+    { "id": 601, "parentId": 6, "name": "باطری و برق خودرو", "icon": "BatteryChargingFull" },
+    { "id": 602, "parentId": 6, "name": "لوازم یدکی", "icon": "Settings" },
+
+    { "id": 701, "parentId": 7, "name": "رنگ و رزین", "icon": "FormatColorFill" },
+    { "id": 702, "parentId": 7, "name": "مواد اولیه صنعتی", "icon": "Science" },
+
+    { "id": 801, "parentId": 8, "name": "پوشاک مردانه", "icon": "Man" },
+    { "id": 802, "parentId": 8, "name": "پارچه و نساجی", "icon": "DryCleaning" }
+  ],
+    "children": [
+      { "id": 1001, "parentId": 102, "name": "فرزند وسایل ساختمانی 1" },
+      { "id": 1002, "parentId": 102, "name": "فرزند وسایل ساختمانی 2" },
+      { "id": 1003, "parentId": 1002, "name": "نوه وسایل ساختمانی 1" },
+      { "id": 1004, "parentId": 1002, "name": "نوه وسایل ساختمانی 2" },
+  
+      { "id": 2001, "parentId": 201, "name": "نوه ماشین‌آلات 1" },
+      { "id": 2002, "parentId": 201, "name": "نوه ماشین‌آلات 2" },
+  
+      { "id": 3001, "parentId": 301, "name": "کلاه ایمنی" },
+      { "id": 3002, "parentId": 301, "name": "دستکش ایمنی" },
+  
+      { "id": 4001, "parentId": 401, "name": "ظروف استیل" },
+      { "id": 4002, "parentId": 401, "name": "قابلمه تفلون" },
+  
+      { "id": 5001, "parentId": 501, "name": "توتوگرافی" },
+      { "id": 5002, "parentId": 501, "name": "سیستم GPS" },
+  
+      { "id": 6001, "parentId": 601, "name": "باطری ماشین سواری" },
+  
+      { "id": 7001, "parentId": 701, "name": "رزین اپوکسی" },
+      { "id": 7002, "parentId": 701, "name": "رنگ پلی‌اورتان" },
+  
+      { "id": 8001, "parentId": 801, "name": "پیراهن رسمی" },
+      { "id": 8002, "parentId": 801, "name": "کت اسپرت" }
+    ]
+  }
+  

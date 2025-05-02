@@ -24,7 +24,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* @font-face {
+  font-family: "IranSans";
+  src: url("../public/fonts/IranSans/IRANSans.ttf") format("ttf");
+  src: url("../public/fonts/IranSans/IRANSans.woff") format("woff");
+  src: url("../public/fonts/IranSans/IRANSans.woff2") format("woff2");
+} */
+
 * {
+  /* font-family: "IranSans" !important; */
   box-sizing: border-box;
   padding: 0;
   margin: 0;
