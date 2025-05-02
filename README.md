@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# اپلیکیشن دسته‌بندی آگهی‌ها
 
-## Getting Started
+این پروژه با استفاده از فریم‌ورک **Next.js** توسعه داده شده و برای شبیه‌سازی سمت سرور از ابزار **json-server** استفاده شده.
 
-First, run the development server:
+## 🚀 نحوه اجرا
 
-```bash
+ابتدا پکیج‌ها رو نصب کن:
+ 
+npm install
+ 
+### اجرای JSON Server:
+
+برای راه‌اندازی سرور JSON  
+
+ 
+json-server --watch mock-api/db.json --port 3001
+ 
+
+این دستور فایل `db.json` رو در مسیر `mock-api/` با پورت ۳۰۰۱ اجرا می‌کنه.
+
+### اجرای پروژه Next.js:
+
+در یه ترمینال جداگانه، این دستور رو بزن:
+
+ 
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+پروژه روی آدرس `http://localhost:3000` اجرا می‌شه.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📚 درباره پروژه
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+این پروژه یک منوی دسته‌بندی آگهی داره که شامل دسته‌بندی‌ها، فرزندان (زیردسته‌ها) و نوه‌هاست. ساختارش به شکلی طراحی شده که فقط یک لایه از فرزندان نشون داده می‌شه و با کلیک روی هر فرزند، نوه‌هاش باز می‌شن.
 
-## Learn More
+برای طراحی UI از **MUI** و برای ارتباط با API از **Axios** استفاده شده. داده‌ها هم به صورت mock و از طریق `json-server` شبیه‌سازی شدن.
 
-To learn more about Next.js, take a look at the following resources:
+## ⚠️ نکته
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+به خاطر محدودیت زمانی، بخش اتصال کامل فیلترها به لیست آگهی‌ها هنوز پیاده‌سازی نشده و در نسخه نهایی اضافه می‌شه.
+یعنی من برنامه هام بهم ریخت وگرنه زمان بود
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ممنون که وقت گذاشتی و این پروژه رو دیدی 🙏
+# menu-test
