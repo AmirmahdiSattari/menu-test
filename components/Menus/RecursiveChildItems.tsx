@@ -63,7 +63,7 @@ const RecursiveChildItems = ({
                 },
               }}
             >
-              {child.name}  
+              {child.name}   
             </Typography>
 
             {isActive && hasNested && (

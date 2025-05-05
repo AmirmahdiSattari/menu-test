@@ -24,7 +24,7 @@ const CategoryHeader = ({
       color={icon ? activeRed : "#828282"}
     >
       {icon && <IconRenderer iconName={iconName} />}
-      {name}  
+      {name}    
     </Typography>
   );
 };

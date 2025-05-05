@@ -36,8 +36,8 @@ const CategoryList = ({
               "&::before": {
                 display: "none",
               },
-              marginRight: 4,
-              borderRight: "2px solid #ECECEC",
+              marginRight: 2,
+              // borderRight: "2px solid #ECECEC",
             }}
           >
             <AccordionSummary
@@ -66,7 +66,7 @@ const CategoryList = ({
                 fontWeight={900}
               >
                 <IconRenderer iconName={category.icon} />
-                {category.name}
+                {category.name} 
               </Typography>
             </AccordionSummary>
             <AccordionDetails
