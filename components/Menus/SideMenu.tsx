@@ -164,7 +164,7 @@ const SideMenu = () => {
           expandIcon={<ExpandMoreIcon />}
           sx={{
             flexDirection: "row-reverse",
-            py: 4,
+            pt: 4,
             gap: 1,
             justifyContent: "flex-end",
             "& .MuiAccordionSummary-content": {
