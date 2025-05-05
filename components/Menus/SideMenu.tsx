@@ -177,12 +177,12 @@ const SideMenu = () => {
           
           }}
         >
-          <Typography fontWeight="bold" color="#555555">
+          <Typography fontWeight="bold" color="#555555" pb={2}>
             دسته‌بندی
           </Typography>
         </AccordionSummary>
 
-        <AccordionDetails sx={{  p: 0,  marginBottom:6 }}>
+        <AccordionDetails sx={{    marginBottom:6 }}>
           {renderMenu()}
         </AccordionDetails>
       </Accordion>
