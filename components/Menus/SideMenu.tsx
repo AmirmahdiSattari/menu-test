@@ -4,6 +4,7 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Box,
   Typography,
 } from "@mui/material";
 import { Category, Child, Subcategory } from "./types";
@@ -21,9 +22,15 @@ const SideMenu = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [subcategories, setSubcategories] = useState<Subcategory[]>([]);
   const [children, setChildren] = useState<Child[]>([]);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null);
-  const [selectedSubcategoryId, setSelectedSubcategoryId] = useState<number | null>(null);
-  const [activeChildId, setActiveChildId] = useState<number | undefined>(undefined);
+  const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(
+    null
+  );
+  const [selectedSubcategoryId, setSelectedSubcategoryId] = useState<
+    number | null
+  >(null);
+  const [activeChildId, setActiveChildId] = useState<number | undefined>(
+    undefined
+  );
   const [focusedChildId, setFocusedChildId] = useState<number | null>(null);
 
   useEffect(() => {
@@ -80,12 +87,16 @@ const SideMenu = () => {
   const renderMenu = () => {
     if (focusedChildId !== null) {
       const parent = children.find((c) => c.id === focusedChildId);
-      if (!parent) return null;
+
+      const cat = categories.find((c) => c.id === selectedCategoryId);
+      if (!parent || !cat) return null;
+
 
       return (
         <>
           <BackButton onClick={() => setFocusedChildId(null)} label="بازگشت" />
-          <CategoryHeader name={parent.name} />
+          <CategoryHeader iconName={cat.icon} name={cat.name} icon={true}/>
+          <CategoryHeader name={parent.name} icon={false} />
           <RecursiveChildItems
             parentId={parent.id}
             childrenGroups={childrenGroups}
@@ -108,8 +119,8 @@ const SideMenu = () => {
       return (
         <>
           <BackButton onClick={resetMenu} label="همه آگهی ها" />
-          <CategoryHeader iconName={cat.icon} name={cat.name} />
-          <CategoryHeader iconName={sub.icon} name={sub.name} />
+          <CategoryHeader iconName={cat.icon} name={cat.name} icon={true}/>
+          <CategoryHeader iconName={sub.icon} name={sub.name} icon={false}/>
           <RecursiveChildItems
             parentId={sub.id}
             childrenGroups={childrenGroups}
@@ -134,16 +145,50 @@ const SideMenu = () => {
   };
 
   return (
-    <div>
-      <Accordion defaultExpanded disableGutters>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography fontWeight="bold">دسته‌بندی</Typography>
+    <Box sx={{ width: "100%" }}>
+      <Accordion
+        defaultExpanded
+        disableGutters
+        square
+        elevation={0}
+        sx={{
+          boxShadow: "none",
+          border: "none",
+          borderBottom: "1px solid #ccc",
+          "&::before": {
+            display: "none",
+          },
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          sx={{
+            flexDirection: "row-reverse",
+            py: 4,
+            gap: 1,
+            justifyContent: "flex-end",
+            "& .MuiAccordionSummary-content": {
+              margin: 0,
+              flexGrow: 0,
+              justifyContent: "flex-end",
+              display: "flex",
+              alignItems: "center",
+            },
+          
+          }}
+        >
+          <Typography fontWeight="bold" color="#555555">
+            دسته‌بندی
+          </Typography>
         </AccordionSummary>
-        <AccordionDetails>{renderMenu()}</AccordionDetails>
+
+        <AccordionDetails sx={{  p: 0,  marginBottom:6 }}>
+          {renderMenu()}
+        </AccordionDetails>
       </Accordion>
 
       <FilterSection />
-    </div>
+    </Box>
   );
 };
 

@@ -5,7 +5,8 @@ import { Box, Typography } from "@mui/material";
 import { Child } from "./types";
 import React from "react";
 
-const activeRed = "#e53935";
+const activeRed = "#F45050";
+const grayBorder = "#DEDEDE";
 
 const RecursiveChildItems = ({
   parentId,
@@ -28,24 +29,43 @@ const RecursiveChildItems = ({
         const isActive = child.id === activeChildId;
 
         return (
-          <Box key={child.id} sx={{ mr: 4, mt: 2 }}>
+          <Box
+            key={child.id}
+            sx={{
+              mr: 7,
+              py: 0,
+              position: "relative",
+              borderRight: `2px solid ${grayBorder}`,
+            }}
+          >
             <Typography
               onClick={() => onChildClick(child.id)}
               sx={{
-                fontWeight: hasNested ? "bold" : "normal",
-                my: 1,
-                mr: 2,
-                pr: 1,
+                my: 0,
+                py: 1.5,
+                pr: 2,
                 cursor: "pointer",
-                borderRight: isActive && !hasNested ? `3px solid ${activeRed}` : "none",
-                color: "#555555",
+                position: "relative",
+                "&::after":
+                  isActive && !hasNested
+                    ? {
+                        content: '""',
+                        position: "absolute",
+                        right: "-2px",
+                        top: 0,
+                        bottom: 0,
+                        width: "2px",
+                        backgroundColor: activeRed,
+                      }
+                    : {},
                 "&:hover": {
                   color: "#000000",
                 },
               }}
             >
-              {child.name}
+              {child.name}  
             </Typography>
+
             {isActive && hasNested && (
               <RecursiveChildItems
                 parentId={child.id}

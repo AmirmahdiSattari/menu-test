@@ -34,12 +34,44 @@ const FilterSection = () => {
     });
   };
 
+
+
   return (
     <>
       {/* قیمت Section */}
-      <Accordion disableGutters>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography fontWeight="bold">قیمت</Typography>
+      <Accordion
+        disableGutters
+        square
+        elevation={0}
+        sx={{
+         
+          boxShadow: "none",
+          border: "none",
+          borderBottom: "1px solid #ccc",
+          "&::before": {
+            display: "none",
+          },
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          sx={{
+            flexDirection: "row-reverse",
+            py: 4,
+            gap: 1,
+            justifyContent: "flex-end",
+            "& .MuiAccordionSummary-content": {
+              margin: 0,
+              flexGrow: 0,
+              justifyContent: "flex-end",
+              display: "flex",
+              alignItems: "center",
+            },
+          }}
+        >
+          <Typography fontWeight="bold" color={"#555555"}>
+            قیمت
+          </Typography>
         </AccordionSummary>
         <AccordionDetails dir="rtl">
           <FormControl fullWidth>
@@ -51,9 +83,10 @@ const FilterSection = () => {
               onChange={handlePriceChange}
               valueLabelDisplay="auto"
               step={500000}
+             
               min={0}
               max={100000000}
-              sx={{ mx: 1 }}
+              sx={{ mx: 1 ,color:"#F45050"}}
             />
             <Box display="flex" justifyContent="space-between" mt={1} px={1}>
               <Typography variant="body2">
@@ -68,9 +101,39 @@ const FilterSection = () => {
       </Accordion>
 
       {/* وضعیت آگهی Section */}
-      <Accordion disableGutters>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography fontWeight="bold">وضعیت آگهی</Typography>
+      <Accordion
+        disableGutters
+        square
+        elevation={0}
+        sx={{
+ 
+          boxShadow: "none",
+          border: "none",
+          borderBottom: "1px solid #ccc",
+          "&::before": {
+            display: "none",
+          },
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          sx={{
+            flexDirection: "row-reverse",
+            py: 4,
+            gap: 1,
+            justifyContent: "flex-end",
+            "& .MuiAccordionSummary-content": {
+              margin: 0,
+              flexGrow: 0,
+              justifyContent: "flex-end",
+              display: "flex",
+              alignItems: "center",
+            },
+          }}
+        >
+          <Typography fontWeight="bold" color={"#555555"}>
+            وضعیت آگهی
+          </Typography>
         </AccordionSummary>
         <AccordionDetails dir="rtl">
           <FormControl component="fieldset" variant="standard">

@@ -27,7 +27,7 @@ interface Props {
   onSubcategorySelect: (id: number) => void;
 }
 
-const activeRed = "#e53935";
+const activeRed = "#F45050";
 
 const CategoryAccordion = ({
   categories,

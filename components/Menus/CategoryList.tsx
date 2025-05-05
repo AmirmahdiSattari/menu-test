@@ -10,6 +10,7 @@ import { Category, Subcategory } from "./types";
 import IconRenderer from "./IconRenderer";
 import React from "react";
 
+const grayBorder = "#DEDEDE";
 const CategoryList = ({
   categories,
   subcategoryGroups,
@@ -25,14 +26,56 @@ const CategoryList = ({
         const subcats = subcategoryGroups[category.id] || [];
 
         return subcats.length > 0 ? (
-          <Accordion key={category.id} disableGutters sx={{ boxShadow: "none", border: "none" }}>
-            <AccordionSummary  sx={{ border: "none" }}>
-              <Typography display="flex" alignItems="center" color={"#555555"}>
+          <Accordion
+            key={category.id}
+            disableGutters
+            sx={{
+              boxShadow: "none",
+              border: "none",
+              borderRadius: "0 !important",
+              "&::before": {
+                display: "none",
+              },
+              marginRight: 4,
+              borderRight: "2px solid #ECECEC",
+            }}
+          >
+            <AccordionSummary
+              sx={{
+                borderRadius: "0 !important",
+                flexDirection: "row-reverse",
+                py: 2,
+                gap: 1,
+                justifyContent: "flex-end",
+                border: "none",
+                boxShadow: "none",
+                "& .MuiAccordionSummary-content": {
+                  margin: 0,
+                  flexGrow: 0,
+                  justifyContent: "flex-end",
+                  display: "flex",
+                  alignItems: "center",
+                },
+              }}
+            >
+              <Typography
+                display="flex"
+                alignItems="center"
+                color={"#555555"}
+                pt={1}
+                fontWeight={900}
+              >
                 <IconRenderer iconName={category.icon} />
                 {category.name}
               </Typography>
             </AccordionSummary>
-            <AccordionDetails>
+            <AccordionDetails
+              sx={{
+                padding: 0,
+                border: "none",
+                boxShadow: "none",
+              }}
+            >
               {subcats.map((sub) => (
                 <Box
                   key={sub.id}
@@ -40,8 +83,10 @@ const CategoryList = ({
                   sx={{
                     display: "flex",
                     alignItems: "center",
+                    borderRight: `1px solid ${grayBorder}`,
                     cursor: "pointer",
-                    mr: 4,
+                    mr: 5,
+                    p:1.5,
                     color: "#555555",
                     "&:hover": {
                       color: "#000000",
@@ -49,7 +94,9 @@ const CategoryList = ({
                   }}
                 >
                   <IconRenderer iconName={sub.icon} />
-                  <Typography sx={{ my: 2 }}>{sub.name}</Typography>
+                  <Typography  fontSize={15}>
+                   {sub.name}
+                  </Typography>
                 </Box>
               ))}
             </AccordionDetails>
@@ -57,7 +104,7 @@ const CategoryList = ({
         ) : (
           <Typography key={category.id} sx={{ ml: 3, my: 2 }}>
             <IconRenderer iconName={category.icon} />
-            {category.name}
+            CategoryList 3 {category.name}
           </Typography>
         );
       })}

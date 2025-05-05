@@ -17,16 +17,35 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl" className={vazirmatn.variable}>
-      <body>
+      <body style={{ margin: 0, height: '100vh', overflow: 'hidden' }}>
         <ThemeRegistry>
-          <AppBar position="sticky" sx={{ borderRadius: 3, height: 120, backgroundColor: '#fafafa' }} />
+          <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+            {/* Header */}
+            <AppBar position="static" sx={{ height: '10vh', backgroundColor: '#D9D9D9', boxShadow: 'none' }} />
 
-          <Box sx={{ display: 'flex' }}>
-            <Box sx={{ width: '25%', minHeight: '100vh', p: 2 }}>
-              <SideMenu />
+            {/* Main Content */}
+            <Box sx={{ display: 'flex', flex: 1 ,backgroundColor :'#ffff'}} pl={4} pt={4}>
+              {/* Sidebar */}
+              <Box sx={{ width: '20%', height: '90vh',  px:2,overflowY: 'auto'  }}>
+                <SideMenu />
+              </Box>
+
+              {/* Scrollable Content */}
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  p: 3,
+                  backgroundColor: '#D9D9D9',
+                  overflowY: 'auto',
+                  height: '90vh',
+                  borderRadius:5,
+                  overflowX:'hidden'
+                  
+                }}
+              >
+                {children}
+              </Box>
             </Box>
-
-            <Box sx={{ flexGrow: 1, p: 3, backgroundColor: '#f4f4f4' }}>{children}</Box>
           </Box>
         </ThemeRegistry>
       </body>
